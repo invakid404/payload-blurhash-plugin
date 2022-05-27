@@ -60,31 +60,29 @@ const computeBlurhash =
     componentY = 3,
   }: BlurhashPluginOptions = {}) =>
   (incomingConfig: Config): Config => {
-    const hook =
-      (collectionSlug: string): BeforeChangeHook =>
-      async ({ data, req }) => {
-        const mediaDir = getMediaDirectory(req.payload, req.collection);
-        const filepath = path.join(mediaDir, data.filename);
+    const hook: BeforeChangeHook = async ({ data, req }) => {
+      const mediaDir = getMediaDirectory(req.payload, req.collection);
+      const filepath = path.join(mediaDir, data.filename);
 
-        const rawPixels = await sharp(filepath)
-          .resize(width, height)
-          .ensureAlpha(1)
-          .raw()
-          .toBuffer();
+      const rawPixels = await sharp(filepath)
+        .resize(width, height)
+        .ensureAlpha(1)
+        .raw()
+        .toBuffer();
 
-        const blurhash = encode(
-          new Uint8ClampedArray(rawPixels),
-          width,
-          height,
-          componentX,
-          componentY,
-        );
+      const blurhash = encode(
+        new Uint8ClampedArray(rawPixels),
+        width,
+        height,
+        componentX,
+        componentY,
+      );
 
-        return {
-          ...data,
-          blurhash,
-        };
+      return {
+        ...data,
+        blurhash,
       };
+    };
 
     return {
       ...incomingConfig,
@@ -109,10 +107,7 @@ const computeBlurhash =
             ],
             hooks: {
               ...collection.hooks,
-              beforeChange: [
-                ...(collection.hooks?.beforeChange ?? []),
-                hook(collection.slug),
-              ],
+              beforeChange: [...(collection.hooks?.beforeChange ?? []), hook],
             },
           };
         }) ?? [],
