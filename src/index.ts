@@ -34,7 +34,7 @@ const computeBlurhash =
     height = 32,
     componentX = 3,
     componentY = 3,
-  }: BlurhashPluginOptions) =>
+  }: BlurhashPluginOptions = {}) =>
   (incomingConfig: Config): Config => {
     const hook =
       (collectionSlug: string): BeforeChangeHook =>
