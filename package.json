@@ -8,7 +8,7 @@
     "url": "git+ssh://git@github.com/invakid404/payload-blurhash.git"
   },
   "author": "Tsvetomir Bonev <invakid404@riseup.net>",
-  "license": "MIT",
+  "license": "Unlicense",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
