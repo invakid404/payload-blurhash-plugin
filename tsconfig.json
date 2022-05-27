@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "rootDir": "./src",
+    "outDir": "./lib",
+    "strict": true,
+    "declaration": true
+  },
+  "exclude": [
+    "node_modules",
+    "lib"
+  ]
+}
