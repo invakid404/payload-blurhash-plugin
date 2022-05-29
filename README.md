@@ -1,14 +1,14 @@
-# payload-blurhash
+# payload-blurhash-plugin
 
 Payload CMS plugin for automatic Blurhash encoding of images.
 
 ## Getting started
 
-1. Install the package with `npm i payload-blurhash` or `yarn add payload-blurhash`.
+1. Install the package with `npm i payload-blurhash-plugin` or `yarn add payload-blurhash-plugin`.
 2. Add the plugin to your `payload.config.ts`:
 
 ```ts
-import computeBlurhash from 'payload-blurhash';
+import computeBlurhash from 'payload-blurhash-plugin';
 
 export default buildConfig({
   /* ... */

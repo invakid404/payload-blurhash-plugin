@@ -120,7 +120,7 @@ const computeBlurhash =
               ...webpackConfig.resolve,
               alias: {
                 ...webpackConfig.resolve?.alias,
-                'payload-blurhash': path.resolve(__dirname, './mock-plugin'),
+                'payload-blurhash-plugin': path.resolve(__dirname, './mock-plugin'),
               },
             },
           };
