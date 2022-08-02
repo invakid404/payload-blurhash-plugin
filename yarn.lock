@@ -6606,9 +6606,9 @@ pause@0.0.1:
   integrity "sha1-HUCLP9t2kjuVQ9lvtMnf1TXZy10= sha512-KG8UEiEVkR3wGEb4m5yZkVCzigAD+cVEJck2CzYZO37ZGJfctvVptVO192MwrtPhzONn6go8ylnOdMhKqi4nfg=="
 
 payload@^1.0.11:
-  version "1.0.11"
-  resolved "https://registry.npmjs.org/payload/-/payload-1.0.11.tgz"
-  integrity sha512-Mq+SJP8eiEbTG26S9wdxzE/cZeAsd29GJiBb0UFkzizoskZHSmmbCduUUFKOaIE3rp2ZJXUhTJbSxs6FJLzwvA==
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/payload/-/payload-1.0.12.tgz#17c32150876bfd52fd39ff869f77c8ca575d2d3f"
+  integrity sha512-uoaiwqwnuA+nx8++5uTFWymJ3qqUAFH8aYSga6/0CjX//tXgVqqMtp6ZbNCEEKRvs+k6jo5wFubvzRCI4xmqLA==
   dependencies:
     "@babel/cli" "^7.12.8"
     "@babel/core" "^7.11.6"
