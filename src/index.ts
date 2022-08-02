@@ -61,6 +61,9 @@ const computeBlurhash =
   }: BlurhashPluginOptions = {}) =>
   (incomingConfig: Config): Config => {
     const hook: BeforeChangeHook = async ({ data, req }) => {
+      if (!req.collection) {
+        return data
+      }
       const mediaDir = getMediaDirectory(req.payload, req.collection);
       const filepath = path.join(mediaDir, data.filename);
 
