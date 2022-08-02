@@ -21,7 +21,7 @@
     "blurhash": "^1.1.5",
     "node-fetch": "^3.2.4",
     "sharp": "^0.29.3",
-    "url-join": "4"
+    "url-join": "5"
   },
   "devDependencies": {
     "@types/node": "^17.0.35",
