@@ -61,6 +61,10 @@ const computeBlurhash =
   }: BlurhashPluginOptions = {}) =>
   (incomingConfig: Config): Config => {
     const hook: BeforeChangeHook = async ({ data, req }) => {
+      if (!req.collection) {
+        return data;
+      }
+
       const mediaDir = getMediaDirectory(req.payload, req.collection);
       const filepath = path.join(mediaDir, data.filename);
 
@@ -120,7 +124,10 @@ const computeBlurhash =
               ...webpackConfig.resolve,
               alias: {
                 ...webpackConfig.resolve?.alias,
-                'payload-blurhash-plugin': path.resolve(__dirname, './mock-plugin'),
+                'payload-blurhash-plugin': path.resolve(
+                  __dirname,
+                  './mock-plugin',
+                ),
               },
             },
           };
