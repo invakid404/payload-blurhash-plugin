@@ -19,7 +19,7 @@
   ],
   "dependencies": {
     "blurhash": "^1.1.5",
-    "sharp": "^0.29.3"
+    "sharp": "^0.30.7"
   },
   "devDependencies": {
     "@types/node": "^18.6.3",
