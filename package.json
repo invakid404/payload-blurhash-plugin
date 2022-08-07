@@ -18,8 +18,10 @@
     "lib/**/*"
   ],
   "dependencies": {
-    "blurhash": "^1.1.5",
-    "sharp": "^0.30.7"
+    "blurhash": "^1.1.5"
+  },
+  "peerDependencies": {
+    "sharp": "0.x"
   },
   "devDependencies": {
     "@types/node": "^18.6.3",
