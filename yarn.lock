@@ -2347,10 +2347,10 @@ bl@^4.0.3:
     inherits "^2.0.4"
     readable-stream "^3.4.0"
 
-blurhash@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.npmjs.org/blurhash/-/blurhash-1.1.5.tgz"
-  integrity sha512-a+LO3A2DfxTaTztsmkbLYmUzUeApi0LZuKalwbNmqAHR6HhJGMt1qSV/R3wc+w4DL28holjqO3Bg74aUGavGjg==
+blurhash@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/blurhash/-/blurhash-2.0.1.tgz#7f134ad0cf3cbb6bcceb81ea51b82e1423009dca"
+  integrity sha512-qAJW99ZIEVJqLKvR6EUtMavaalYiFgfHNvwO6eiqHE7RTBZYGQLPJvzs4WlnqSQPxZgqSPH/n4kRJIHzb/Y7dg==
 
 body-parser@1.20.0, body-parser@^1.19.0:
   version "1.20.0"
