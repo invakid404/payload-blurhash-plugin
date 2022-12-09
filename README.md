@@ -53,6 +53,12 @@ export interface BlurhashPluginOptions {
    * Default: 3
    */
   componentY?: number;
+
+  /*
+   * Pattern to determine which MIME types to target
+   * Default: image/*
+   */
+  mimeTypePattern?: string;
 }
 ```
 
