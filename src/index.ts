@@ -6,6 +6,7 @@ import sharp from 'sharp';
 import { encode } from 'blurhash';
 import { Payload } from 'payload';
 import { Collection } from 'payload/dist/collections/config/types';
+import { Minimatch } from 'minimatch';
 
 const getMediaDirectory = (payload: Payload, collection: Collection) => {
   const staticDir = collection.config.upload.staticDir;
@@ -49,19 +50,31 @@ export interface BlurhashPluginOptions {
    * Default: 3
    */
   componentY?: number;
+
+  /*
+   * Pattern to determine which MIME types to target
+   * Default: image/*
+   */
+  mimeTypePattern?: string;
 }
 
-const computeBlurhash =
-  ({
-    collections,
-    width = 32,
-    height = 32,
-    componentX = 3,
-    componentY = 3,
-  }: BlurhashPluginOptions = {}) =>
-  (incomingConfig: Config): Config => {
+const computeBlurhash = ({
+  collections,
+  width = 32,
+  height = 32,
+  componentX = 3,
+  componentY = 3,
+  mimeTypePattern = 'image/*',
+}: BlurhashPluginOptions = {}) => {
+  const mimeTypeMatcher = new Minimatch(mimeTypePattern);
+
+  return (incomingConfig: Config): Config => {
     const hook: BeforeChangeHook = async ({ data, req }) => {
       if (!req.collection) {
+        return data;
+      }
+
+      if (!mimeTypeMatcher.match(data.mimeType)) {
         return data;
       }
 
@@ -139,5 +152,6 @@ const computeBlurhash =
       },
     };
   };
+};
 
 export default computeBlurhash;
