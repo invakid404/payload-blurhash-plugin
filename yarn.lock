@@ -5993,10 +5993,10 @@ minimatch@^3.0.4, minimatch@^3.1.1:
   dependencies:
     brace-expansion "^1.1.7"
 
-minimatch@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-5.1.1.tgz#6c9dffcf9927ff2a31e74b5af11adf8b9604b022"
-  integrity sha512-362NP+zlprccbEt/SkxKfRMHnNY85V74mVnpUpNyr3F35covl09Kec7/sEFLt3RA4oXmewtoaanoIf67SE5Y5g==
+minimatch@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-7.0.1.tgz#346583590577d192cab9b88514f1832b9509d737"
+  integrity sha512-C4CrOG1kAnaIxQPTAoiAmZCR2up1yjDdseGpr8UCUw5UqBUao5E1q2bOv0cAX0+y8MUxcyrvkTsoj5DvGRnvdQ==
   dependencies:
     brace-expansion "^2.0.1"
 
