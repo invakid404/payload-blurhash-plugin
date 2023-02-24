@@ -19,7 +19,7 @@
   ],
   "dependencies": {
     "blurhash": "^2.0.4",
-    "minimatch": "^5.1.1"
+    "minimatch": "^7.1.1"
   },
   "peerDependencies": {
     "sharp": "0.x"
