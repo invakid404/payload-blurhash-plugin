@@ -14,9 +14,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "prepare": "yarn build"
   },
-  "files": [
-    "lib/**/*"
-  ],
+  "files": ["lib/**/*"],
   "dependencies": {
     "blurhash": "^2.0.4",
     "minimatch": "^5.1.1"
@@ -27,7 +25,7 @@
   "devDependencies": {
     "@types/node": "^18.6.3",
     "@types/sharp": "^0.31.0",
-    "payload": "^1.0.11",
+    "payload": "^2.0.14",
     "prettier": "^2.6.2",
     "typescript": "^4.7.2"
   }

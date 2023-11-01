@@ -1,6 +1,5 @@
 import { Config } from 'payload/config';
-import { CollectionConfig } from 'payload/types';
-import { BeforeChangeHook } from 'payload/dist/globals/config/types';
+import { CollectionConfig, CollectionBeforeChangeHook } from 'payload/types';
 import * as path from 'path';
 import sharp from 'sharp';
 import { encode } from 'blurhash';
@@ -69,7 +68,7 @@ const computeBlurhash = ({
   const mimeTypeMatcher = new Minimatch(mimeTypePattern);
 
   return (incomingConfig: Config): Config => {
-    const hook: BeforeChangeHook = async ({ data, req }) => {
+    const hook: CollectionBeforeChangeHook = async ({ data, req }) => {
       if (!req.collection) {
         return data;
       }
