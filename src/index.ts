@@ -3,21 +3,7 @@ import { CollectionConfig, CollectionBeforeChangeHook } from 'payload/types';
 import * as path from 'path';
 import sharp from 'sharp';
 import { encode } from 'blurhash';
-import { Payload } from 'payload';
-import { Collection } from 'payload/dist/collections/config/types';
 import { Minimatch } from 'minimatch';
-
-const getMediaDirectory = (payload: Payload, collection: Collection) => {
-  const staticDir = collection.config.upload.staticDir;
-
-  if (path.isAbsolute(staticDir)) {
-    return staticDir;
-  }
-
-  const configDir = payload.config.paths.configDir;
-
-  return path.join(configDir, staticDir);
-};
 
 export interface BlurhashPluginOptions {
   /*
