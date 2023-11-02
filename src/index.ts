@@ -1,11 +1,10 @@
 import { Config } from 'payload/config';
 import { CollectionConfig, CollectionBeforeChangeHook } from 'payload/types';
 import * as path from 'path';
-import sharp from 'sharp';
-import { encode } from 'blurhash';
 import { Minimatch } from 'minimatch';
+import { AlgorithmOptions, defaultAlgorithm, runAlgorithm } from './algorithms';
 
-export interface BlurhashPluginOptions {
+export type BlurhashPluginOptions = {
   /*
    * Array of collection slugs that the plugin should apply to.
    * By default, the plugin will apply to all collections with `upload` properties.
@@ -13,44 +12,20 @@ export interface BlurhashPluginOptions {
   collections?: CollectionConfig['slug'][];
 
   /*
-   * Width to resize the image to prior to computing the blurhash.
-   * Default: 32
-   */
-  width?: number;
-
-  /*
-   * Height to resize the image to prior to computing the blurhash.
-   * Default: 32
-   */
-  height?: number;
-
-  /*
-   * X component count to pass to the Blurhash library.
-   * Default: 3
-   */
-  componentX?: number;
-
-  /*
-   * Y component count to pass to the Blurhash library.
-   * Default: 3
-   */
-  componentY?: number;
-
-  /*
    * Pattern to determine which MIME types to target
    * Default: image/*
    */
   mimeTypePattern?: string;
-}
+} & AlgorithmOptions;
 
-const computeBlurhash = ({
-  collections,
-  width = 32,
-  height = 32,
-  componentX = 3,
-  componentY = 3,
-  mimeTypePattern = 'image/*',
-}: BlurhashPluginOptions = {}) => {
+const computeBlurhash = (pluginOptions?: BlurhashPluginOptions) => {
+  const {
+    collections,
+    mimeTypePattern = 'image/*',
+    algorithm = defaultAlgorithm,
+    ...options
+  } = pluginOptions ?? {};
+
   const mimeTypeMatcher = new Minimatch(mimeTypePattern);
 
   return (incomingConfig: Config): Config => {
@@ -73,19 +48,7 @@ const computeBlurhash = ({
         return data;
       }
 
-      const rawPixels = await sharp(fileData)
-        .resize(width, height)
-        .ensureAlpha(1)
-        .raw()
-        .toBuffer();
-
-      const blurhash = encode(
-        new Uint8ClampedArray(rawPixels),
-        width,
-        height,
-        componentX,
-        componentY,
-      );
+      const blurhash = await runAlgorithm(algorithm, fileData, options);
 
       return {
         ...data,
