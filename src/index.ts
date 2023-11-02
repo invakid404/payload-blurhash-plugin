@@ -77,10 +77,17 @@ const computeBlurhash = ({
         return data;
       }
 
-      const mediaDir = getMediaDirectory(req.payload, req.collection);
-      const filepath = path.join(mediaDir, data.filename);
+      const file = req.files?.file;
+      if (file == null || !('data' in file)) {
+        return data;
+      }
 
-      const rawPixels = await sharp(filepath)
+      const fileData = file.data;
+      if (!Buffer.isBuffer(fileData)) {
+        return data;
+      }
+
+      const rawPixels = await sharp(fileData)
         .resize(width, height)
         .ensureAlpha(1)
         .raw()
