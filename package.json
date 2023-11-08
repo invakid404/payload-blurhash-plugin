@@ -26,7 +26,7 @@
     "sharp": "0.x"
   },
   "devDependencies": {
-    "@types/node": "^20.8.10",
+    "@types/node": "^20.9.0",
     "@types/sharp": "^0.32.0",
     "@vercel/ncc": "^0.38.1",
     "payload": "^2.0.14",
