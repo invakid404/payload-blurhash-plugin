@@ -30,10 +30,6 @@ const computeBlurhash = (pluginOptions?: BlurhashPluginOptions) => {
 
   return (incomingConfig: Config): Config => {
     const hook: CollectionBeforeChangeHook = async ({ data, req }) => {
-      if (!req.collection && req.payloadAPI !== "local") {
-        return data;
-      }
-
       if (!mimeTypeMatcher.match(data.mimeType)) {
         return data;
       }
