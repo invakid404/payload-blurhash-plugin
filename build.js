@@ -77,3 +77,5 @@ fs.writeFileSync(
   ),
   'utf-8',
 );
+
+fs.copyFileSync("README.md", "lib/README.md")
