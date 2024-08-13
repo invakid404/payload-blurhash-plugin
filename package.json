@@ -1,6 +1,6 @@
 {
   "name": "payload-blurhash-plugin",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Payload CMS plugin for automatic Blurhash encoding of images",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
