@@ -16,7 +16,12 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "prepare": "node build.js"
   },
-  "files": ["lib/**/*"],
+  "files": [
+    "lib/**/*"
+  ],
+  "engines": {
+    "node": "^18.20.2 || >=20.9.0"
+  },
   "dependencies": {
     "blurhash": "^2.0.4",
     "minimatch": "^9.0.3",
@@ -27,11 +32,11 @@
     "sharp": "0.x"
   },
   "devDependencies": {
-    "@types/node": "^20.8.10",
-    "@types/sharp": "^0.32.0",
+    "@types/node": "^20.14.9",
     "@vercel/ncc": "^0.38.1",
-    "payload": "^2.0.14",
+    "next": "15.0.0-canary.104",
+    "payload": "v3.0.0-beta.76",
     "prettier": "^2.6.2",
-    "typescript": "^4.7.2"
+    "typescript": "5.5.4"
   }
 }
