@@ -14,8 +14,7 @@
   "scripts": {
     "build": "node build.js",
     "format": "prettier --write \"src/**/*.ts\"",
-    "prepare": "node build.js",
-    "test": "cd test && next dev"
+    "prepare": "node build.js"
   },
   "files": [
     "lib/**/*"
@@ -33,27 +32,11 @@
     "sharp": "0.x"
   },
   "devDependencies": {
-    "@payloadcms/db-mongodb": "beta",
-    "@payloadcms/next": "beta",
     "@types/node": "^20.14.9",
-    "@types/react": "npm:types-react@19.0.0-rc.0",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.0",
     "@vercel/ncc": "^0.38.1",
     "next": "15.0.0-canary.104",
-    "payload": "beta",
+    "payload": "v3.0.0-beta.76",
     "prettier": "^2.6.2",
-    "react": "19.0.0-rc-06d0b89e-20240801",
-    "react-dom": "19.0.0-rc-06d0b89e-20240801",
     "typescript": "5.5.4"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "npm:types-react@19.0.0-rc.0",
-      "@types/react-dom": "npm:types-react-dom@19.0.0-rc.0"
-    }
-  },
-  "overrides": {
-    "@types/react": "npm:types-react@19.0.0-rc.0",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.0"
   }
 }
