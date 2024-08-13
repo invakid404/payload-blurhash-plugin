@@ -1,5 +1,8 @@
-import { Config } from 'payload/config';
-import { CollectionConfig, CollectionBeforeChangeHook } from 'payload/types';
+import type {
+  Config,
+  CollectionConfig,
+  CollectionBeforeChangeHook,
+} from 'payload';
 import * as path from 'path';
 import { Minimatch } from 'minimatch';
 import { AlgorithmOptions, defaultAlgorithm, runAlgorithm } from './algorithms';
@@ -34,7 +37,7 @@ const computeBlurhash = (pluginOptions?: BlurhashPluginOptions) => {
         return data;
       }
 
-      const file = req.files?.file;
+      const file = req.file;
       if (file == null || !('data' in file)) {
         return data;
       }
@@ -79,28 +82,6 @@ const computeBlurhash = (pluginOptions?: BlurhashPluginOptions) => {
             },
           };
         }) ?? [],
-      admin: {
-        ...incomingConfig.admin,
-        webpack: (webpackConfig) => {
-          const modifiedConfig = {
-            ...webpackConfig,
-            resolve: {
-              ...webpackConfig.resolve,
-              alias: {
-                ...webpackConfig.resolve?.alias,
-                'payload-blurhash-plugin': path.resolve(
-                  __dirname,
-                  './mock-plugin',
-                ),
-              },
-            },
-          };
-
-          return (
-            incomingConfig.admin?.webpack?.(modifiedConfig) ?? modifiedConfig
-          );
-        },
-      },
     };
   };
 };

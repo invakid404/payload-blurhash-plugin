@@ -1,3 +1,6 @@
+test/.next
+test/media
+
 .idea/
 node_modules/
 lib/*
