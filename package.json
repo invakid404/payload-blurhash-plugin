@@ -34,7 +34,7 @@
   "devDependencies": {
     "@types/node": "^20.14.9",
     "@vercel/ncc": "^0.38.1",
-    "next": "15.0.0-canary.104",
+    "next": "15.0.0-rc.0",
     "payload": "v3.0.0-beta.76",
     "prettier": "^2.6.2",
     "typescript": "5.5.4"
