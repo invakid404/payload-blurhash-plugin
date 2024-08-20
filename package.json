@@ -4,6 +4,7 @@
   "description": "Payload CMS plugin for automatic Blurhash encoding of images",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "type": "module",
   "private": true,
   "repository": {
     "type": "git",
@@ -16,9 +17,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "prepare": "node build.js"
   },
-  "files": [
-    "lib/**/*"
-  ],
+  "files": ["lib/**/*"],
   "engines": {
     "node": "^18.20.2 || >=20.9.0"
   },
