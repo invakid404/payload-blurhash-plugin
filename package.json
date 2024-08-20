@@ -35,7 +35,7 @@
     "@vercel/ncc": "^0.38.1",
     "next": "15.0.0-canary.104",
     "payload": "v3.0.0-beta.76",
-    "prettier": "^2.6.2",
+    "prettier": "^3.3.3",
     "typescript": "5.5.4"
   }
 }
