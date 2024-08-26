@@ -77,3 +77,8 @@ fs.writeFileSync(
   ),
   'utf-8',
 );
+
+fs.copyFileSync(
+  path.resolve(__dirname, 'README.md'),
+  path.resolve(__dirname, 'lib/README.md'),
+);
