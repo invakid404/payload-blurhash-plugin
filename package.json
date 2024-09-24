@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.4.1",
-    "@vercel/ncc": "^0.38.1",
+    "@vercel/ncc": "^0.38.2",
     "next": "15.0.0-canary.104",
     "payload": "v3.0.0-beta.76",
     "prettier": "^3.3.3",
