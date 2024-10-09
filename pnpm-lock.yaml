@@ -35,13 +35,13 @@ importers:
         version: 15.0.0-canary.104(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)
       payload:
         specifier: v3.0.0-beta.76
-        version: 3.0.0-beta.76(@swc/core@1.6.1(@swc/helpers@0.5.12))(@swc/types@0.1.12)(graphql@16.8.1)(typescript@5.5.4)
+        version: 3.0.0-beta.76(@swc/core@1.6.1(@swc/helpers@0.5.12))(@swc/types@0.1.12)(graphql@16.8.1)(typescript@5.6.3)
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
       typescript:
-        specifier: 5.5.4
-        version: 5.5.4
+        specifier: 5.6.3
+        version: 5.6.3
 
 packages:
 
@@ -914,8 +914,8 @@ packages:
   type@2.7.3:
     resolution: {integrity: sha512-8j+1QmAbPvLZow5Qpi6NCaN8FB60p/6x8/vfNqOk/hC+HuvFZhL4+WfekuhQLiqFZXOgQdrs3B+XxEmCc6b3FQ==}
 
-  typescript@5.5.4:
-    resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
+  typescript@5.6.3:
+    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -1535,7 +1535,7 @@ snapshots:
 
   path-is-absolute@1.0.1: {}
 
-  payload@3.0.0-beta.76(@swc/core@1.6.1(@swc/helpers@0.5.12))(@swc/types@0.1.12)(graphql@16.8.1)(typescript@5.5.4):
+  payload@3.0.0-beta.76(@swc/core@1.6.1(@swc/helpers@0.5.12))(@swc/types@0.1.12)(graphql@16.8.1)(typescript@5.6.3):
     dependencies:
       '@next/env': 15.0.0-rc.0
       '@payloadcms/translations': 3.0.0-beta.76
@@ -1562,7 +1562,7 @@ snapshots:
       pluralize: 8.0.0
       sanitize-filename: 1.6.3
       scmp: 2.1.0
-      ts-essentials: 7.0.3(typescript@5.5.4)
+      ts-essentials: 7.0.3(typescript@5.6.3)
       uuid: 10.0.0
     optionalDependencies:
       '@swc/core': 1.6.1(@swc/helpers@0.5.12)
@@ -1781,15 +1781,15 @@ snapshots:
     dependencies:
       utf8-byte-length: 1.0.5
 
-  ts-essentials@7.0.3(typescript@5.5.4):
+  ts-essentials@7.0.3(typescript@5.6.3):
     dependencies:
-      typescript: 5.5.4
+      typescript: 5.6.3
 
   tslib@2.6.3: {}
 
   type@2.7.3: {}
 
-  typescript@5.5.4: {}
+  typescript@5.6.3: {}
 
   undici-types@5.26.5: {}
 
