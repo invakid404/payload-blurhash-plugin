@@ -25,8 +25,8 @@ importers:
         version: 3.23.8
     devDependencies:
       '@types/node':
-        specifier: ^22.4.1
-        version: 22.4.1
+        specifier: ^22.8.6
+        version: 22.8.6
       '@vercel/ncc':
         specifier: ^0.38.1
         version: 0.38.1
@@ -333,11 +333,8 @@ packages:
   '@types/minimatch@5.1.2':
     resolution: {integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==}
 
-  '@types/node@20.14.15':
-    resolution: {integrity: sha512-Fz1xDMCF/B00/tYSVMlmK7hVeLh7jE5f3B7X1/hmV0MJBwE27KlS7EvD/Yp+z1lm8mVhwV5w+n8jOZG8AfTlKw==}
-
-  '@types/node@22.4.1':
-    resolution: {integrity: sha512-1tbpb9325+gPnKK0dMm+/LMriX0vKxf6RnB0SZUqfyVkQ4fMgUSySqhxE/y8Jvs4NyF1yHzTfG9KlnkIODxPKg==}
+  '@types/node@22.8.6':
+    resolution: {integrity: sha512-tosuJYKrIqjQIlVCM4PEGxOmyg3FCPa/fViuJChnGeEIhjA46oy8FMVoF9su1/v8PNs2a8Q0iFNyOx0uOF91nw==}
 
   '@types/prettier@2.7.3':
     resolution: {integrity: sha512-+68kP9yzs4LMp7VNh8gdzMSPZFL44MLGqiHWvttYJe+6qnuVr4Ek9wSBQoveqY/r+LwjCcU29kNVkidwim+kYA==}
@@ -919,9 +916,6 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@5.26.5:
-    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
-
   undici-types@6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
@@ -1150,7 +1144,7 @@ snapshots:
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 20.14.15
+      '@types/node': 22.8.6
 
   '@types/json-schema@7.0.15': {}
 
@@ -1158,11 +1152,7 @@ snapshots:
 
   '@types/minimatch@5.1.2': {}
 
-  '@types/node@20.14.15':
-    dependencies:
-      undici-types: 5.26.5
-
-  '@types/node@22.4.1':
+  '@types/node@22.8.6':
     dependencies:
       undici-types: 6.19.8
 
@@ -1790,8 +1780,6 @@ snapshots:
   type@2.7.3: {}
 
   typescript@5.5.4: {}
-
-  undici-types@5.26.5: {}
 
   undici-types@6.19.8: {}
 
