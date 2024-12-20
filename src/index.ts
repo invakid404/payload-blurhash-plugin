@@ -74,6 +74,9 @@ const computeBlurhash = (pluginOptions?: BlurhashPluginOptions) => {
               {
                 name: 'blurhash',
                 type: 'text',
+                admin: {
+                  hidden: true
+                }
               },
             ],
             hooks: {
