@@ -36,6 +36,6 @@
     "next": "15.0.0-canary.104",
     "payload": "v3.0.0-beta.76",
     "prettier": "^3.3.3",
-    "typescript": "5.5.4"
+    "typescript": "5.6.3"
   }
 }
