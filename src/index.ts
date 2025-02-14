@@ -19,6 +19,12 @@ export type BlurhashPluginOptions = {
    * Default: image/*
    */
   mimeTypePattern?: string;
+
+  /*
+   * Whether to show the Blurhash field when viewing media items in the admin interface.
+   * Default: false
+   */
+  showBlurhashField?: boolean;
 } & AlgorithmOptions;
 
 const computeBlurhash = (pluginOptions?: BlurhashPluginOptions) => {
@@ -26,6 +32,7 @@ const computeBlurhash = (pluginOptions?: BlurhashPluginOptions) => {
     collections,
     mimeTypePattern = 'image/*',
     algorithm = defaultAlgorithm,
+    showBlurhashField = false,
     ...options
   } = pluginOptions ?? {};
 
@@ -75,7 +82,7 @@ const computeBlurhash = (pluginOptions?: BlurhashPluginOptions) => {
                 name: 'blurhash',
                 type: 'text',
                 admin: {
-                  hidden: true,
+                  hidden: !showBlurhashField,
                 },
               },
             ],
