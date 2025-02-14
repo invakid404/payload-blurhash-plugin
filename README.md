@@ -16,18 +16,17 @@ import computeBlurhash from 'payload-blurhash-plugin';
 
 export default buildConfig({
   /* ... */
-  plugins: [
-    computeBlurhash(),
-  ],
+  plugins: [computeBlurhash()],
 });
 ```
 
 ## Plugin options
 
-Optionally, you can pass the following options to tweak the behavior of the plugin:
+Optionally, you can pass the following options to tweak the behavior of the
+plugin:
 
 ```ts
-export interface BlurhashPluginOptions {
+export type BlurhashPluginOptions = {
   /*
    * Array of collection slugs that the plugin should apply to.
    * By default, the plugin will apply to all collections with `upload` properties.
@@ -35,35 +34,39 @@ export interface BlurhashPluginOptions {
   collections?: CollectionConfig['slug'][];
 
   /*
-   * Width to resize the image to prior to computing the blurhash.
-   * Default: 32
-   */
-  width?: number;
-
-  /*
-   * Height to resize the image to prior to computing the blurhash.
-   * Default: 32
-   */
-  height?: number;
-
-  /*
-   * X component count to pass to the Blurhash library.
-   * Default: 3
-   */
-  componentX?: number;
-
-  /*
-   * Y component count to pass to the Blurhash library.
-   * Default: 3
-   */
-  componentY?: number;
-
-  /*
    * Pattern to determine which MIME types to target
    * Default: image/*
    */
   mimeTypePattern?: string;
-}
+
+  /*
+   * Whether to show the Blurhash field when viewing media items in the admin interface.
+   * Default: false
+   */
+  showBlurhashField?: boolean;
+} & AlgorithmOptions;
 ```
 
-The defaults are chosen somewhat arbitrarily, they are just values that I've found to work nicely for me.
+The `AlgorithmOptions` depend on which algorithm you are using. Currently, there
+are two algorithms available: "blurhash" (the default) and "thumbhash". You can
+select an algorithm by specifying the algorithm name under the `algorithm` key.
+
+These are the options for the "blurhash" algorithm:
+
+```ts
+type BlurhashOptions = {
+  // Default: 32
+  width?: number | undefined;
+  // Default: 32
+  height?: number | undefined;
+  // Default: 3
+  componentX?: number | undefined;
+  // Default: 3
+  componentY?: number | undefined;
+};
+```
+
+There are currently no options for the "thumbhash" algorithm.
+
+The defaults are chosen somewhat arbitrarily, they are just values that I've
+found to work nicely for me.
